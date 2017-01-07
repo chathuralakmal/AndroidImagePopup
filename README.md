@@ -56,7 +56,9 @@ Show your image as a simple popup. Simply set the image as drawable and thats it
 
 # Author
 Chathura Lakmal
+
 [Google +](https://plus.google.com/u/0/+ChathuraLakmalBest)
+
 [Web Site](http://ceylonlabs.com)
      
 # License
