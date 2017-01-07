@@ -28,7 +28,7 @@ public class ImagePopup extends ImageView {
     private int windowHeight = 800;
     private int windowWidth = 800;
 
-    private int windowBackgroundColor = Color.parseColor("#FFFFFF");
+    private int backgroundColor = Color.parseColor("#FFFFFF");
 
 
     public ImagePopup(Context context) {
@@ -56,12 +56,13 @@ public class ImagePopup extends ImageView {
         this.windowWidth = windowWidth;
     }
 
-    public int getWindowBackgroundColor() {
-        return windowBackgroundColor;
+    public int getBackgroundColor() {
+        return backgroundColor;
     }
 
-    public void setWindowBackgroundColor(int windowBackgroundColor) {
-        this.windowBackgroundColor = windowBackgroundColor;
+    @Override
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
     }
 
     public void initiatePopup(Drawable drawable){
@@ -69,7 +70,7 @@ public class ImagePopup extends ImageView {
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
 
             View layout = inflater.inflate(R.layout.popup,(ViewGroup)findViewById(R.id.popup));
-            layout.setBackgroundColor(getWindowBackgroundColor());
+            layout.setBackgroundColor(getBackgroundColor());
 
             ImageView imageView = (ImageView)layout.findViewById(R.id.imageView);
             imageView.setImageDrawable(drawable);

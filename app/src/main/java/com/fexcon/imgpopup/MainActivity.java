@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         /** Set Image Height, Width & Background Color as you want **/
        final ImagePopup imagePopup = new ImagePopup(this);
-        //imagePopup.setWindowBackgroundColor(Color.BLACK);
+        //imagePopup.setBackgroundColor(Color.BLACK);
         //imagePopup.setWindowWidth(800);
         //imagePopup.setWindowHeight(800);
 
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 /** Initiate Popup view **/
                 imagePopup.initiatePopup(imageView.getDrawable());
+                //imagePopup.setBackgroundColor(R.color.colorAccent);
             }
         });
     }
