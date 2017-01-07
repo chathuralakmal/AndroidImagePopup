@@ -55,7 +55,9 @@ Show your image as a simple popup. Simply set the image as drawable and thats it
 [Stack Overflow](http://stackoverflow.com)
 
 # Author
-Chathura Lakmal : [Google +](https://plus.google.com/u/0/+ChathuraLakmalBest)
+Chathura Lakmal
+[Google +](https://plus.google.com/u/0/+ChathuraLakmalBest)
+[Web Site](http://ceylonlabs.com)
      
 # License
 The MIT License
