@@ -1,9 +1,9 @@
-# Android Image Popup
+# Android Image Popup [![](https://jitpack.io/v/chathuralakmal/AndroidImagePopup.svg)](https://jitpack.io/#chathuralakmal/AndroidImagePopup)
 
-This class was created to use in Android projects.
-Shows a DialogFragment with Camera or Gallery options. The user can choose from where provider wants to pick an image.
+Show your image as a simple popup. Simply set the image as drawable and thats it!!!. And also you can set width, height & background color as you want.
 
-# Screenshot
+
+# Preview
 ![Demo Preview](preview.gif? "Demo Preview")
 
 # Usage
@@ -20,21 +20,19 @@ Shows a DialogFragment with Camera or Gallery options. The user can choose from 
 #### Step 2. Add the dependency
 
     dependencies {
-           
+           compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.0'
 	}
 
-# Samples
- You can take a look at the sample by downloading this repository.
 
 
 # Implementation
 
-### Step #1 - Create instance of the Popup Class
+### Create instance of the popup class and thats all !!
 
     ImagePopup imagePopup = new ImagePopup(this); 
     
 
-### Step #2 - Examples
+### Example
 
      /** Set popup height, width & background color as you want **/
 
@@ -53,8 +51,13 @@ Shows a DialogFragment with Camera or Gallery options. The user can choose from 
         });
         
 
-## Credits
+# Credits
 [Stack Overflow](http://stackoverflow.com)
+
+# Author
+Chathura Lakmal : [Google +](https://plus.google.com/u/0/+ChathuraLakmalBest)
      
 # License
-Available under MIT.
+The MIT License
+
+Copyright (c) 2017 Chathura Lakmal
