@@ -81,6 +81,9 @@ Shows a DialogFragment with Camera or Gallery options. The user can choose from 
 ## How to dismiss the dialog.
      PickImageDialog dialog = PickImageDialog.on(...);
      dialog.dismiss();
+
+## Credits
+[Stack Overflow](http://stackoverflow.com)
      
 # License
 Available under MIT.
