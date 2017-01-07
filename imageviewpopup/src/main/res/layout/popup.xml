@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/popup">
 
+    <ImageView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/close"
+        android:id="@+id/closeBtn"
+        android:layout_alignParentRight="true"
+        />
     <ImageView android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:id="@+id/imageView"
         android:src="@android:drawable/ic_dialog_alert"/>
-</FrameLayout>
+</RelativeLayout>
