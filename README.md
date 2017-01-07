@@ -37,7 +37,7 @@ Show image as a popup on a click event or any event. Simply set the image as dra
      /** Set popup height, width & background color as you want **/
 
        final ImagePopup imagePopup = new ImagePopup(this);
-        imagePopup.setBackgroundColor(Color.BLACK);
+        imagePopup.setWindowBackgroundColor(Color.BLACK);
         imagePopup.setWindowWidth(800);
         imagePopup.setWindowHeight(800);
 
