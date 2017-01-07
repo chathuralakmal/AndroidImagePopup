@@ -1,8 +1,6 @@
-# PickImage
+# Android Image Popup
 
 This class was created to use in Android projects.
-
-# Porpouse
 Shows a DialogFragment with Camera or Gallery options. The user can choose from where provider wants to pick an image.
 
 # Screenshot
@@ -82,7 +80,7 @@ Shows a DialogFragment with Camera or Gallery options. The user can choose from 
      PickImageDialog dialog = PickImageDialog.on(...);
      dialog.dismiss();
 
-## Credits
+# Credits
 [Stack Overflow](http://stackoverflow.com)
      
 # License
