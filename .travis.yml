@@ -25,5 +25,6 @@ android:
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-17
   licenses:
-    - android-sdk-license-.+
-    - google-gdk-license-.+
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
