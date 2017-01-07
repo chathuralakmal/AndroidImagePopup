@@ -1,6 +1,6 @@
 # Android Image Popup [![](https://jitpack.io/v/chathuralakmal/AndroidImagePopup.svg)](https://jitpack.io/#chathuralakmal/AndroidImagePopup)
 
-Show your image as a simple popup. Simply set the image as drawable and thats it!!!. And also you can set width, height & background color as you want.
+Show android image as a simple popup when click on a button or as you want. Simply set the image as drawable to the method and thats it!!!. And also you can set width, height & background color as you want.
 
 
 # Preview
