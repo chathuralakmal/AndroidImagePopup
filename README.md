@@ -4,7 +4,7 @@ This class was created to use in Android projects.
 Shows a DialogFragment with Camera or Gallery options. The user can choose from where provider wants to pick an image.
 
 # Screenshot
-![Demo Preview](screenshot/img.gif? "Demo Preview")
+![Demo Preview](preview.gif? "Demo Preview")
 
 # Usage
 
@@ -80,7 +80,7 @@ Shows a DialogFragment with Camera or Gallery options. The user can choose from 
      PickImageDialog dialog = PickImageDialog.on(...);
      dialog.dismiss();
 
-# Credits
+## Credits
 [Stack Overflow](http://stackoverflow.com)
      
 # License
