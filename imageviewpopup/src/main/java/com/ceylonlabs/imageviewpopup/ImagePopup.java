@@ -69,7 +69,8 @@ public class ImagePopup extends ImageView {
         try{
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
 
-            View layout = inflater.inflate(R.layout.popup,(ViewGroup)findViewById(R.id.popup));
+            final View layout = inflater.inflate(R.layout.popup,(ViewGroup)findViewById(R.id.popup));
+
             layout.setBackgroundColor(getBackgroundColor());
 
             ImageView imageView = (ImageView)layout.findViewById(R.id.imageView);
@@ -88,12 +89,11 @@ public class ImagePopup extends ImageView {
             });
 
             /** Background dim part **/
-            View container = (View) popupWindow.getContentView().getParent();
-            WindowManager wm = (WindowManager) context.getSystemService(context.WINDOW_SERVICE);
-            WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) container.getLayoutParams();
+            WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+            WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) layout.getLayoutParams();
             layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
             layoutParams.dimAmount = 0.3f;
-            wm.updateViewLayout(container, layoutParams);
+            wm.updateViewLayout(layout, layoutParams);
 
 
         }catch (Exception e){
