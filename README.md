@@ -20,7 +20,7 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 #### Step 2. Add the dependency
 
     dependencies {
-           compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.1'
+           compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.3'
 	}
 
 
