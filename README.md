@@ -1,4 +1,4 @@
-# Android Image Popup [![](https://jitpack.io/v/chathuralakmal/AndroidImagePopup.svg)](https://jitpack.io/#chathuralakmal/AndroidImagePopup)
+# Android Image Popup [![](https://jitpack.io/v/chathuralakmal/AndroidImagePopup.svg)](https://jitpack.io/#chathuralakmal/AndroidImagePopup) [![Droid Controls](https://img.shields.io/badge/Available%20On-Droid%20Controls-blue.svg?style=flat)](http://www.droidcontrols.com/image-views/android-image-popup/)
 
 Show image as a popup on a click event or any event. Simply set the image as drawable and thats it!!!. And also you can set width, height & background color as you want.
 
