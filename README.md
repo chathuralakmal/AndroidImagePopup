@@ -54,13 +54,6 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 # Credits
 [Stack Overflow](http://stackoverflow.com)
 
-# Author
-Chathura Lakmal
-
-[Google +](https://plus.google.com/u/0/+ChathuraLakmalBest)
-
-[Web Site](http://ceylonlabs.com)
-
 # Contribute
 
 Contributions are always welcome!
@@ -68,4 +61,4 @@ Contributions are always welcome!
 # License
 The MIT License
 
-Copyright (c) 2017 Chathura Lakmal
+Copyright (c) 2017 Chathura Lakmal [Google +](https://plus.google.com/u/0/+ChathuraLakmalBest)
