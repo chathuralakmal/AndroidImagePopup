@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         //imagePopup.setBackgroundColor(Color.BLACK);
         //imagePopup.setWindowWidth(800);
         //imagePopup.setWindowHeight(800);
+        imagePopup.setImageClickClose(true);
 
         final ImageView imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setOnClickListener(new View.OnClickListener() {
