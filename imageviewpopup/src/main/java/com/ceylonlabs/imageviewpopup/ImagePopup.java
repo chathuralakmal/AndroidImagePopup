@@ -27,6 +27,7 @@ public class ImagePopup extends ImageView {
 
     private int windowHeight = 800;
     private int windowWidth = 800;
+    private boolean imageClickClose;
 
     private int backgroundColor = Color.parseColor("#FFFFFF");
 
@@ -59,10 +60,14 @@ public class ImagePopup extends ImageView {
     public int getBackgroundColor() {
         return backgroundColor;
     }
-
+    
     @Override
     public void setBackgroundColor(int backgroundColor) {
         this.backgroundColor = backgroundColor;
+    }
+    
+    public void enableOnImageClickClose(boolean true) {
+        this.imageClickClose = true;
     }
 
     public void initiatePopup(Drawable drawable){
@@ -87,6 +92,15 @@ public class ImagePopup extends ImageView {
                     popupWindow.dismiss();
                 }
             });
+            
+            if(imageClickClose) {
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        popupWindow.dismiss();
+                    }
+                }
+            }
 
             /** Background dim part **/
             WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
