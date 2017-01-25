@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.Gravity;
@@ -25,9 +26,10 @@ public class ImagePopup extends ImageView {
     private Context context;
     private PopupWindow popupWindow;
 
-    private int windowHeight = 800;
-    private int windowWidth = 800;
-    private boolean imageClickClose;
+    private int windowHeight = 0;
+    private int windowWidth = 0;
+    private boolean imageOnClickClose;
+    private boolean hideCloseIcon;
 
     private int backgroundColor = Color.parseColor("#FFFFFF");
 
@@ -40,6 +42,8 @@ public class ImagePopup extends ImageView {
     public ImagePopup(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
+
 
     public int getWindowHeight() {
         return windowHeight;
@@ -61,23 +65,30 @@ public class ImagePopup extends ImageView {
         return backgroundColor;
     }
 
-    public boolean isImageClickClose() {
-        return imageClickClose;
-    }
-
-    public void setImageClickClose(boolean imageClickClose) {
-        this.imageClickClose = imageClickClose;
-    }
-
     @Override
     public void setBackgroundColor(int backgroundColor) {
         this.backgroundColor = backgroundColor;
     }
 
 
-//    public void enableOnImageClickClose(boolean imageClickClose) {
-//        this.imageClickClose = imageClickClose;
-//    }
+    /** Close Options **/
+
+    public void setImageOnClickClose(boolean imageOnClickClose) {
+        this.imageOnClickClose = imageOnClickClose;
+    }
+
+
+    public boolean isImageOnClickClose() {
+        return imageOnClickClose;
+    }
+
+    public boolean isHideCloseIcon() {
+        return hideCloseIcon;
+    }
+
+    public void setHideCloseIcon(boolean hideCloseIcon) {
+        this.hideCloseIcon = hideCloseIcon;
+    }
 
     public void initiatePopup(Drawable drawable){
         try{
@@ -89,20 +100,40 @@ public class ImagePopup extends ImageView {
 
             ImageView imageView = (ImageView)layout.findViewById(R.id.imageView);
             imageView.setImageDrawable(drawable);
+            Log.e("Image","Height--> "+imageView.getDrawable().getMinimumHeight());
+            Log.e("Image","Width--> "+imageView.getDrawable().getMinimumWidth());
 
-            popupWindow = new PopupWindow(layout, getWindowWidth(), getWindowHeight(), true);
+            /** Height & Width Adjustments according to the Image size and Device Screen size **/
+            DisplayMetrics metrics = new DisplayMetrics();
+            ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+            Log.e("Phone Height","-->"+metrics.heightPixels);
+            Log.e("Phone Width","-->"+metrics.widthPixels);
 
+            windowHeight = imageView.getDrawable().getMinimumHeight();
+            windowWidth = imageView.getDrawable().getMinimumWidth();
+            if(metrics.heightPixels<imageView.getDrawable().getMinimumHeight() && metrics.widthPixels<imageView.getDrawable().getMinimumWidth()){
+                windowHeight = imageView.getDrawable().getMinimumHeight()/2;
+                windowWidth = imageView.getDrawable().getMinimumWidth()/2;
+            }
+
+            popupWindow = new PopupWindow(layout, windowWidth, windowHeight, true);
             popupWindow.showAtLocation(layout, Gravity.CENTER, 0,0);
 
             ImageView closeIcon = (ImageView)layout.findViewById(R.id.closeBtn);
+
+
+            if(isHideCloseIcon()){
+                closeIcon.setVisibility(View.GONE);
+            }
             closeIcon.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     popupWindow.dismiss();
                 }
             });
-            
-            if(imageClickClose) {
+
+
+            if(isImageOnClickClose()) {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -111,18 +142,18 @@ public class ImagePopup extends ImageView {
                 });
             }
 
-
             /** Background dim part **/
-            WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) layout.getLayoutParams();
             layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
             layoutParams.dimAmount = 0.3f;
-            wm.updateViewLayout(layout, layoutParams);
-
+            windowManager.updateViewLayout(layout, layoutParams);
 
         }catch (Exception e){
             e.printStackTrace();
         }
     }
+
+
 
 }
