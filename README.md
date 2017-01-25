@@ -34,12 +34,14 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 
 ### Example
 
-     /** Set popup height, width & background color as you want **/
+     /** Set popup height, width & background color as you need or just leave default settings **/
 
        final ImagePopup imagePopup = new ImagePopup(this);
         imagePopup.setBackgroundColor(Color.BLACK);
         imagePopup.setWindowWidth(800);
         imagePopup.setWindowHeight(800);
+        imagePopup.setHideCloseIcon(true);
+        imagePopup.setImageOnClickClose(true);
 
         final ImageView imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -61,4 +63,4 @@ Contributions are always welcome!
 # License
 The MIT License
 
-Copyright (c) 2017 Chathura Lakmal [Google +](https://plus.google.com/u/0/+ChathuraLakmalBest)
+Copyright (c) 2017 [Chathura Lakmal](https://lk.linkedin.com/in/cmac90)
