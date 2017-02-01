@@ -63,4 +63,4 @@ Contributions are always welcome!
 # License
 The MIT License
 
-Copyright (c) 2017 [Chathura Lakmal](https://lk.linkedin.com/in/cmac90)
+Copyright (c) 2017 [Chathura Lakmal](https://www.linkedin.com/in/cmac90)
