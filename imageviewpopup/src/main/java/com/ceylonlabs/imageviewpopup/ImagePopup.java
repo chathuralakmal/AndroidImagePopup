@@ -112,8 +112,15 @@ public class ImagePopup extends ImageView {
             windowHeight = imageView.getDrawable().getMinimumHeight();
             windowWidth = imageView.getDrawable().getMinimumWidth();
             if(metrics.heightPixels<imageView.getDrawable().getMinimumHeight() && metrics.widthPixels<imageView.getDrawable().getMinimumWidth()){
-                windowHeight = imageView.getDrawable().getMinimumHeight()/2;
-                windowWidth = imageView.getDrawable().getMinimumWidth()/2;
+                /** Landscape Image **/
+                if(windowHeight<windowWidth){
+                    windowHeight = metrics.heightPixels-1310;
+                    windowWidth = metrics.widthPixels-250;
+                }else{
+                    windowHeight = metrics.heightPixels-460;
+                    windowWidth = metrics.widthPixels-200;
+                }
+
             }
 
             popupWindow = new PopupWindow(layout, windowWidth, windowHeight, true);
