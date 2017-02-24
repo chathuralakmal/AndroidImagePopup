@@ -18,5 +18,5 @@
     <ImageView android:layout_height="200dp"
         android:layout_width="200dp"
         android:id="@+id/imageView"
-        android:src="@drawable/test1"/>
+        android:src="@drawable/android_icon"/>
 </RelativeLayout>
