@@ -109,18 +109,20 @@ public class ImagePopup extends ImageView {
             Log.e("Phone Height","-->"+metrics.heightPixels);
             Log.e("Phone Width","-->"+metrics.widthPixels);
 
-            windowHeight = imageView.getDrawable().getMinimumHeight();
-            windowWidth = imageView.getDrawable().getMinimumWidth();
-            if(metrics.heightPixels<imageView.getDrawable().getMinimumHeight() && metrics.widthPixels<imageView.getDrawable().getMinimumWidth()){
-                /** Landscape Image **/
-                if(windowHeight<windowWidth){
-                    windowHeight = metrics.heightPixels-1310;
-                    windowWidth = metrics.widthPixels-250;
-                }else{
-                    windowHeight = metrics.heightPixels-460;
-                    windowWidth = metrics.widthPixels-200;
-                }
+            if(windowWidth == 0 || windowHeight == 0) {
+                windowHeight = imageView.getDrawable().getMinimumHeight();
+                windowWidth = imageView.getDrawable().getMinimumWidth();
+                if (metrics.heightPixels < imageView.getDrawable().getMinimumHeight() && metrics.widthPixels < imageView.getDrawable().getMinimumWidth()) {
+                    /** Landscape Image **/
+                    if (windowHeight < windowWidth) {
+                        windowHeight = metrics.heightPixels - 1310;
+                        windowWidth = metrics.widthPixels - 250;
+                    } else {
+                        windowHeight = metrics.heightPixels - 460;
+                        windowWidth = metrics.widthPixels - 200;
+                    }
 
+                }
             }
 
             popupWindow = new PopupWindow(layout, windowWidth, windowHeight, true);
