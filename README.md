@@ -58,7 +58,7 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 
 # Contribute
 
-Contributions are always welcome!
+Let's make this grow. Contributions are always welcome!
      
 # License
 The MIT License
