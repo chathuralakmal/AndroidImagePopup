@@ -91,6 +91,8 @@ public class ImagePopup extends ImageView {
     }
 
     public void initiatePopup(Drawable drawable){
+
+
         try{
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
 
@@ -100,32 +102,30 @@ public class ImagePopup extends ImageView {
 
             ImageView imageView = (ImageView)layout.findViewById(R.id.imageView);
             imageView.setImageDrawable(drawable);
+
+
+
             Log.e("Image","Height--> "+imageView.getDrawable().getMinimumHeight());
             Log.e("Image","Width--> "+imageView.getDrawable().getMinimumWidth());
 
-            /** Height & Width Adjustments according to the Image size and Device Screen size **/
+
+
+
+
+//            /** Height & Width Adjustments according to the Image size and Device Screen size **/
             DisplayMetrics metrics = new DisplayMetrics();
             ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
             Log.e("Phone Height","-->"+metrics.heightPixels);
             Log.e("Phone Width","-->"+metrics.widthPixels);
 
-            if(windowWidth == 0 || windowHeight == 0) {
-                windowHeight = imageView.getDrawable().getMinimumHeight();
-                windowWidth = imageView.getDrawable().getMinimumWidth();
-                if (metrics.heightPixels < imageView.getDrawable().getMinimumHeight() && metrics.widthPixels < imageView.getDrawable().getMinimumWidth()) {
-                    /** Landscape Image **/
-                    if (windowHeight < windowWidth) {
-                        windowHeight = metrics.heightPixels - 1310;
-                        windowWidth = metrics.widthPixels - 250;
-                    } else {
-                        windowHeight = metrics.heightPixels - 460;
-                        windowWidth = metrics.widthPixels - 200;
-                    }
+            int width = metrics.widthPixels;
+            int height = metrics.heightPixels;
 
-                }
-            }
+//            ((Activity) getContext()).getWindow().setLayout((int)(width*.8),(int)(height*.6));
+//
 
-            popupWindow = new PopupWindow(layout, windowWidth, windowHeight, true);
+            popupWindow = new PopupWindow(layout, (int)(width*.8),(int)(height*.6), true);
+
             popupWindow.showAtLocation(layout, Gravity.CENTER, 0,0);
 
             ImageView closeIcon = (ImageView)layout.findViewById(R.id.closeBtn);
@@ -152,11 +152,11 @@ public class ImagePopup extends ImageView {
             }
 
             /** Background dim part **/
-            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-            WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) layout.getLayoutParams();
-            layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-            layoutParams.dimAmount = 0.3f;
-            windowManager.updateViewLayout(layout, layoutParams);
+//            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+//            WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) layout.getLayoutParams();
+//            layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+//            layoutParams.dimAmount = 0.3f;
+//            windowManager.updateViewLayout(layout, layoutParams);
 
         }catch (Exception e){
             e.printStackTrace();
