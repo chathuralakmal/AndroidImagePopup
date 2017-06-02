@@ -2,7 +2,7 @@
 
 Show image as a popup on a click event or any event. Simply set the image as drawable and thats it!!!. And also you can set width, height & background color as you want.
 
-#### Version 1.0.7 Highly Recommended
+#### Version 1.0.8 Highly Recommended
 
 # Preview
 ![Demo Preview](preview.gif? "Demo Preview")
@@ -38,6 +38,8 @@ Show image as a popup on a click event or any event. Simply set the image as dra
      /** Set popup height, width & background color as you need or just leave default settings **/
 
        final ImagePopup imagePopup = new ImagePopup(this);
+        imagePopup.setWindowHeight(800); // Optional
+        imagePopup.setWindowWidth(800); // Optional
         imagePopup.setBackgroundColor(Color.BLACK);  // Optional
         imagePopup.setHideCloseIcon(true);  // Optional
         imagePopup.setImageOnClickClose(true);  // Optional
