@@ -118,8 +118,14 @@ public class ImagePopup extends ImageView {
             Log.e("Phone Height","-->"+metrics.heightPixels);
             Log.e("Phone Width","-->"+metrics.widthPixels);
 
+
             int width = metrics.widthPixels;
             int height = metrics.heightPixels;
+
+            if(windowHeight != 0 || windowWidth !=0){
+                width = windowWidth;
+                height = windowHeight;
+            }
 
 //            ((Activity) getContext()).getWindow().setLayout((int)(width*.8),(int)(height*.6));
 //

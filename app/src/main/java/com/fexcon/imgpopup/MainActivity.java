@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         /** Set Image Height, Width & Background Color as you want **/
        final ImagePopup imagePopup = new ImagePopup(this);
         //imagePopup.setBackgroundColor(Color.BLACK);
+        imagePopup.setWindowHeight(200);
+        imagePopup.setWindowWidth(200);
         imagePopup.setHideCloseIcon(true);
         imagePopup.setImageOnClickClose(true);
 

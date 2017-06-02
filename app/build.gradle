@@ -27,6 +27,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile project(":imageviewpopup")
     //compile 'com.github.chathuralakmal:AndroidImagePopup:-SNAPSHOT'
-    //compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.6'
+    //compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.7'
     testCompile 'junit:junit:4.12'
 }
