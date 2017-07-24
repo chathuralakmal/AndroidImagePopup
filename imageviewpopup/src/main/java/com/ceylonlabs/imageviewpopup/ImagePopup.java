@@ -25,6 +25,7 @@ import android.widget.PopupWindow;
 public class ImagePopup extends ImageView {
     private Context context;
     private PopupWindow popupWindow;
+    View layout;
 
     private int windowHeight = 0;
     private int windowWidth = 0;
@@ -96,7 +97,7 @@ public class ImagePopup extends ImageView {
         try{
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
 
-            final View layout = inflater.inflate(R.layout.popup,(ViewGroup)findViewById(R.id.popup));
+            layout = inflater.inflate(R.layout.popup,(ViewGroup)findViewById(R.id.popup));
 
             layout.setBackgroundColor(getBackgroundColor());
 
@@ -169,6 +170,8 @@ public class ImagePopup extends ImageView {
         }
     }
 
-
+    public void setLayoutOnTouchListener(OnTouchListener onTouchListener){
+        layout.setOnTouchListener(onTouchListener);
+    }
 
 }
