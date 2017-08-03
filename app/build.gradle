@@ -29,4 +29,5 @@ dependencies {
     //compile 'com.github.chathuralakmal:AndroidImagePopup:-SNAPSHOT'
     //compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.7'
     testCompile 'junit:junit:4.12'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
