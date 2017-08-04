@@ -1,24 +1,14 @@
 package com.fexcon.imgpopup;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
-import android.widget.TextView;
 
 import com.ceylonlabs.imageviewpopup.ImagePopup;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
-
 
 
     @Override
@@ -27,19 +17,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /** Set Image Height, Width & Background Color as you want **/
-       final ImagePopup imagePopup = new ImagePopup(this);
+        final ImagePopup imagePopup = new ImagePopup(this);
         //imagePopup.setBackgroundColor(Color.BLACK);
         imagePopup.setWindowHeight(800);
         imagePopup.setWindowWidth(800);
         imagePopup.setHideCloseIcon(true);
         imagePopup.setImageOnClickClose(true);
 
-        final ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        final String photoUrl = "http://inthecheesefactory.com/uploads/source/glidepicasso/cover.jpg";
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+
+        Picasso.with(this).load(photoUrl).into(imageView);
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /** Initiate Popup view **/
-                imagePopup.initiatePopup(imageView.getDrawable());
+                // to use it when the same photo are in the image
+//                imagePopup.initiatePopup(imageView.getDrawable());
+
+                // to download the image from url if you want different resolution or different image
+                imagePopup.initiatePopup(photoUrl);
                 //imagePopup.setBackgroundColor(R.color.colorAccent);
             }
         });
