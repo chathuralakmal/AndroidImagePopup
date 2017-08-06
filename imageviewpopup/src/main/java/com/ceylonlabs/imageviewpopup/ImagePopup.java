@@ -20,6 +20,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.File;
 
+
 /**
  * Created by Chathura Lakmal on 1/7/17.
  */
@@ -28,6 +29,7 @@ public class ImagePopup extends ImageView {
     private Context context;
     private PopupWindow popupWindow;
     View layout;
+    private ImageView imageView;
 
     private int windowHeight = 0;
     private int windowWidth = 0;
@@ -96,7 +98,6 @@ public class ImagePopup extends ImageView {
 
     public void initiatePopup(Drawable drawable) {
 
-
         try {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
 
@@ -104,58 +105,8 @@ public class ImagePopup extends ImageView {
 
             layout.setBackgroundColor(getBackgroundColor());
 
-            ImageView imageView = (ImageView) layout.findViewById(R.id.imageView);
+            imageView = (ImageView) layout.findViewById(R.id.imageView);
             imageView.setImageDrawable(drawable);
-
-            Log.e("Image", "Height--> " + imageView.getDrawable().getMinimumHeight());
-            Log.e("Image", "Width--> " + imageView.getDrawable().getMinimumWidth());
-
-
-//            /** Height & Width Adjustments according to the Image size and Device Screen size **/
-            DisplayMetrics metrics = new DisplayMetrics();
-            ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-            Log.e("Phone Height", "-->" + metrics.heightPixels);
-            Log.e("Phone Width", "-->" + metrics.widthPixels);
-
-
-            int width = metrics.widthPixels;
-            int height = metrics.heightPixels;
-
-            if (windowHeight != 0 || windowWidth != 0) {
-                width = windowWidth;
-                height = windowHeight;
-            }
-
-//            ((Activity) getContext()).getWindow().setLayout((int)(width*.8),(int)(height*.6));
-//
-
-            popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
-
-            popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
-            ImageView closeIcon = (ImageView) layout.findViewById(R.id.closeBtn);
-
-
-            if (isHideCloseIcon()) {
-                closeIcon.setVisibility(View.GONE);
-            }
-            closeIcon.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    popupWindow.dismiss();
-                }
-            });
-
-
-            if (isImageOnClickClose()) {
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        popupWindow.dismiss();
-                    }
-                });
-            }
 
             /** Background dim part **/
 //            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -178,60 +129,14 @@ public class ImagePopup extends ImageView {
 
             layout.setBackgroundColor(getBackgroundColor());
 
-            ImageView imageView = (ImageView) layout.findViewById(R.id.imageView);
+            imageView = (ImageView) layout.findViewById(R.id.imageView);
 
             Picasso.with(context).load(imageUrl).into(imageView);
 
-            Log.e("Image", "Height--> " + imageView.getDrawable().getMinimumHeight());
-            Log.e("Image", "Width--> " + imageView.getDrawable().getMinimumWidth());
-
-
-//            /** Height & Width Adjustments according to the Image size and Device Screen size **/
-            DisplayMetrics metrics = new DisplayMetrics();
-            ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-
-            Log.e("Phone Height", "-->" + metrics.heightPixels);
-            Log.e("Phone Width", "-->" + metrics.widthPixels);
-
-
-            int width = metrics.widthPixels;
-            int height = metrics.heightPixels;
-
-            if (windowHeight != 0 || windowWidth != 0) {
-                width = windowWidth;
-                height = windowHeight;
-            }
-
-            popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
-
-            popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
-            ImageView closeIcon = (ImageView) layout.findViewById(R.id.closeBtn);
-
-
-            if (isHideCloseIcon()) {
-                closeIcon.setVisibility(View.GONE);
-            }
-            closeIcon.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    popupWindow.dismiss();
-                }
-            });
-
-
-            if (isImageOnClickClose()) {
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        popupWindow.dismiss();
-                    }
-                });
-            }
-
         } catch (Exception e) {
             e.printStackTrace();
+            Log.e("ImagePopup ", e.getMessage());
+
         }
     }
 
@@ -244,60 +149,15 @@ public class ImagePopup extends ImageView {
 
             layout.setBackgroundColor(getBackgroundColor());
 
-            ImageView imageView = (ImageView) layout.findViewById(R.id.imageView);
+            imageView = (ImageView) layout.findViewById(R.id.imageView);
 
             Picasso.with(context).load(imageUri).into(imageView);
 
-            Log.e("Image", "Height--> " + imageView.getDrawable().getMinimumHeight());
-            Log.e("Image", "Width--> " + imageView.getDrawable().getMinimumWidth());
-
-
-//            /** Height & Width Adjustments according to the Image size and Device Screen size **/
-            DisplayMetrics metrics = new DisplayMetrics();
-            ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-
-            Log.e("Phone Height", "-->" + metrics.heightPixels);
-            Log.e("Phone Width", "-->" + metrics.widthPixels);
-
-
-            int width = metrics.widthPixels;
-            int height = metrics.heightPixels;
-
-            if (windowHeight != 0 || windowWidth != 0) {
-                width = windowWidth;
-                height = windowHeight;
-            }
-
-            popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
-
-            popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
-            ImageView closeIcon = (ImageView) layout.findViewById(R.id.closeBtn);
-
-
-            if (isHideCloseIcon()) {
-                closeIcon.setVisibility(View.GONE);
-            }
-            closeIcon.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    popupWindow.dismiss();
-                }
-            });
-
-
-            if (isImageOnClickClose()) {
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        popupWindow.dismiss();
-                    }
-                });
-            }
 
         } catch (Exception e) {
             e.printStackTrace();
+            Log.e("ImagePopup ", e.getMessage());
+
         }
     }
 
@@ -310,198 +170,88 @@ public class ImagePopup extends ImageView {
 
             layout.setBackgroundColor(getBackgroundColor());
 
-            ImageView imageView = (ImageView) layout.findViewById(R.id.imageView);
+             imageView = (ImageView) layout.findViewById(R.id.imageView);
 
-            Picasso.with(context).load(imageFile).into(imageView);
-
-            Log.e("Image", "Height--> " + imageView.getDrawable().getMinimumHeight());
-            Log.e("Image", "Width--> " + imageView.getDrawable().getMinimumWidth());
-
-
-//            /** Height & Width Adjustments according to the Image size and Device Screen size **/
-            DisplayMetrics metrics = new DisplayMetrics();
-            ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-
-            Log.e("Phone Height", "-->" + metrics.heightPixels);
-            Log.e("Phone Width", "-->" + metrics.widthPixels);
-
-
-            int width = metrics.widthPixels;
-            int height = metrics.heightPixels;
-
-            if (windowHeight != 0 || windowWidth != 0) {
-                width = windowWidth;
-                height = windowHeight;
-            }
-
-            popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
-
-            popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
-            ImageView closeIcon = (ImageView) layout.findViewById(R.id.closeBtn);
-
-
-            if (isHideCloseIcon()) {
-                closeIcon.setVisibility(View.GONE);
-            }
-            closeIcon.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    popupWindow.dismiss();
-                }
-            });
-
-
-            if (isImageOnClickClose()) {
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        popupWindow.dismiss();
-                    }
-                });
-            }
+            Picasso.with(context)
+                    .load(imageFile)
+                    .into(imageView);
 
         } catch (Exception e) {
             e.printStackTrace();
+            Log.e("ImagePopup ", e.getMessage());
         }
     }
 
+    /**
+     * optimize version
+     * @param imageUrl
+     */
     public void initiatePopupWithGlide(String imageUrl) {
 
         try {
+//            Log.e("Image", "initiatePopupWithGlide");
+
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
 
             layout = inflater.inflate(R.layout.popup, (ViewGroup) findViewById(R.id.popup));
 
             layout.setBackgroundColor(getBackgroundColor());
 
-            ImageView imageView = (ImageView) layout.findViewById(R.id.imageView);
+            imageView = (ImageView) layout.findViewById(R.id.imageView);
 
-            Glide.with(context).load(imageUrl).into(imageView);
-
-            Log.e("Image", "Height--> " + imageView.getDrawable().getMinimumHeight());
-            Log.e("Image", "Width--> " + imageView.getDrawable().getMinimumWidth());
-
-
-//            /** Height & Width Adjustments according to the Image size and Device Screen size **/
-            DisplayMetrics metrics = new DisplayMetrics();
-            ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-
-            Log.e("Phone Height", "-->" + metrics.heightPixels);
-            Log.e("Phone Width", "-->" + metrics.widthPixels);
-
-
-            int width = metrics.widthPixels;
-            int height = metrics.heightPixels;
-
-            if (windowHeight != 0 || windowWidth != 0) {
-                width = windowWidth;
-                height = windowHeight;
-            }
-
-            popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
-
-            popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
-            ImageView closeIcon = (ImageView) layout.findViewById(R.id.closeBtn);
-
-
-            if (isHideCloseIcon()) {
-                closeIcon.setVisibility(View.GONE);
-            }
-            closeIcon.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    popupWindow.dismiss();
-                }
-            });
-
-
-            if (isImageOnClickClose()) {
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        popupWindow.dismiss();
-                    }
-                });
-            }
+            Glide.with(context)
+                    .load(imageUrl)
+                    .into(imageView);
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    public void initiatePopupWithGlide(File file) {
-
-        try {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-
-            layout = inflater.inflate(R.layout.popup, (ViewGroup) findViewById(R.id.popup));
-
-            layout.setBackgroundColor(getBackgroundColor());
-
-            ImageView imageView = (ImageView) layout.findViewById(R.id.imageView);
-
-            Glide.with(context).load(file).into(imageView);
-
-            Log.e("Image", "Height--> " + imageView.getDrawable().getMinimumHeight());
-            Log.e("Image", "Width--> " + imageView.getDrawable().getMinimumWidth());
-
-
-//            /** Height & Width Adjustments according to the Image size and Device Screen size **/
-            DisplayMetrics metrics = new DisplayMetrics();
-            ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-
-            Log.e("Phone Height", "-->" + metrics.heightPixels);
-            Log.e("Phone Width", "-->" + metrics.widthPixels);
-
-
-            int width = metrics.widthPixels;
-            int height = metrics.heightPixels;
-
-            if (windowHeight != 0 || windowWidth != 0) {
-                width = windowWidth;
-                height = windowHeight;
-            }
-
-            popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
-
-            popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
-            ImageView closeIcon = (ImageView) layout.findViewById(R.id.closeBtn);
-
-
-            if (isHideCloseIcon()) {
-                closeIcon.setVisibility(View.GONE);
-            }
-            closeIcon.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    popupWindow.dismiss();
-                }
-            });
-
-
-            if (isImageOnClickClose()) {
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        popupWindow.dismiss();
-                    }
-                });
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("ImagePopup ", e.getMessage());
         }
     }
 
 
     public void setLayoutOnTouchListener(OnTouchListener onTouchListener) {
         layout.setOnTouchListener(onTouchListener);
+    }
+
+    public void viewPopup() {
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+
+        if (windowHeight != 0 || windowWidth != 0) {
+            width = windowWidth;
+            height = windowHeight;
+        }
+
+        popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
+        popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
+
+        ImageView closeIcon = (ImageView) layout.findViewById(R.id.closeBtn);
+
+        if (isHideCloseIcon()) {
+            closeIcon.setVisibility(View.GONE);
+        }
+        closeIcon.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupWindow.dismiss();
+            }
+        });
+
+        if (isImageOnClickClose()) {
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    popupWindow.dismiss();
+                }
+            });
+        }
+
     }
 
 }
