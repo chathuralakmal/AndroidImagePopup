@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 //                imagePopup.initiatePopup(imageView.getDrawable());
 
                 // to download the image from url if you want different resolution or different image
-                imagePopup.initiatePopup(photoUrl);
+                imagePopup.initiatePopupWithPicasso(photoUrl);
                 //imagePopup.setBackgroundColor(R.color.colorAccent);
             }
         });
