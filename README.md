@@ -45,11 +45,14 @@ Show image as a popup on a click event or any event. Simply set the image as dra
         imagePopup.setImageOnClickClose(true);  // Optional
 
         final ImageView imageView = (ImageView) findViewById(R.id.imageView);
+	imagePopup.initiatePopup(imageView.getDrawable());
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /** Initiate Popup view **/
-                imagePopup.initiatePopup(imageView.getDrawable());
+		 imagePopup.viewPopup();
+
             }
         });
         
