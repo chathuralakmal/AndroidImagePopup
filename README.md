@@ -31,13 +31,12 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 ### Create instance of the popup class and thats all !!
 
     ImagePopup imagePopup = new ImagePopup(this); 
-    
-
+    	
 ### Example
 
      /** Set popup height, width & background color as you need or just leave default settings **/
 
-       final ImagePopup imagePopup = new ImagePopup(this);
+        final ImagePopup imagePopup = new ImagePopup(this);
         imagePopup.setWindowHeight(800); // Optional
         imagePopup.setWindowWidth(800); // Optional
         imagePopup.setBackgroundColor(Color.BLACK);  // Optional
@@ -56,7 +55,21 @@ Show image as a popup on a click event or any event. Simply set the image as dra
             }
         });
         
-
+	
+### Support using Picasso 
+	// supprot string url for image 
+	initiatePopupWithPicasso(imageUrl);
+	
+	// supprot Uri for image 
+	initiatePopupWithPicasso(imageUri);
+	
+	// supprot File for image 
+	initiatePopupWithPicasso(imageFile);
+	
+### Support using Glide 
+	// supprot string url for image 
+	initiatePopupWithGlide(imageUrl);
+	
 # Credits
 [Stack Overflow](http://stackoverflow.com)
 
