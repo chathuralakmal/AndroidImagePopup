@@ -80,4 +80,4 @@ Let's make this grow. Contributions are always welcome!
 # License
 The MIT License
 
-2017 [Chathura Lakmal](https://www.linkedin.com/in/cmac90)
+2017
