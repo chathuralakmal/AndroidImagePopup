@@ -2,7 +2,6 @@
 
 Show image as a popup on a click event or any event. Simply set the image as drawable and thats it!!!. And also you can set width, height & background color as you want.
 
-#### Version 1.0.8 Highly Recommended
 
 # Preview
 ![Demo Preview](preview.gif? "Demo Preview")
@@ -21,7 +20,7 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 #### Step 2. Add the dependency
 
     dependencies {
-           compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.8'
+           compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.9'
 	}
 
 
@@ -69,6 +68,7 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 ### Support using Glide 
 	// supprot string url for image 
 	initiatePopupWithGlide(imageUrl);
+	
 	
 # Credits
 [Stack Overflow](http://stackoverflow.com)
