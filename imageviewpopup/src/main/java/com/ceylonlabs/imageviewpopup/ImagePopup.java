@@ -226,9 +226,13 @@ public class ImagePopup extends ImageView {
         if (windowHeight != 0 || windowWidth != 0) {
             width = windowWidth;
             height = windowHeight;
+            popupWindow = new PopupWindow(layout, (width), (height), true);
+        }else{
+
+            popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
         }
 
-        popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
+
         popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
 
         ImageView closeIcon = (ImageView) layout.findViewById(R.id.closeBtn);
