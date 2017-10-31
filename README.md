@@ -20,7 +20,7 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 #### Step 2. Add the dependency
 
     dependencies {
-           compile 'com.github.chathuralakmal:AndroidImagePopup:1.2'
+           compile 'com.github.chathuralakmal:AndroidImagePopup:1.2.1'
 	}
 
 
@@ -39,10 +39,11 @@ Show image as a popup on a click event or any event. Simply set the image as dra
         imagePopup.setWindowHeight(800); // Optional
         imagePopup.setWindowWidth(800); // Optional
         imagePopup.setBackgroundColor(Color.BLACK);  // Optional
+	imagePopup.setFullScreen(true); // Optional
         imagePopup.setHideCloseIcon(true);  // Optional
         imagePopup.setImageOnClickClose(true);  // Optional
 
-        final ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
 	imagePopup.initiatePopup(imageView.getDrawable());
 
         imageView.setOnClickListener(new View.OnClickListener() {
