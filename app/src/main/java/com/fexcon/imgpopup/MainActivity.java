@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Log.e("Width",""+Resources.getSystem().getDisplayMetrics().widthPixels);
         final ImagePopup imagePopup = new ImagePopup(this);
         imagePopup.setBackgroundColor(Color.BLACK);
-//        imagePopup.setWindowHeight(Resources.getSystem().getDisplayMetrics().heightPixels);
-//        imagePopup.setWindowWidth(Resources.getSystem().getDisplayMetrics().widthPixels);
+        imagePopup.setFullScreen(true);
         imagePopup.setHideCloseIcon(true);
         imagePopup.setImageOnClickClose(true);
 
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         Picasso.with(this).load(photoUrl).into(imageView);
         // to use it when the same photo are in the image
-//         imagePopup.initiatePopup(imageView.getDrawable());
+        // imagePopup.initiatePopup(imageView.getDrawable());
 
         // to download the image from url if you want different resolution or different image
         imagePopup.initiatePopupWithPicasso(photoUrl);

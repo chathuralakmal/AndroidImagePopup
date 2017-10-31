@@ -35,6 +35,7 @@ public class ImagePopup extends ImageView {
     private int windowWidth = 0;
     private boolean imageOnClickClose;
     private boolean hideCloseIcon;
+    private boolean fullScreen;
 
     private int backgroundColor = Color.parseColor("#FFFFFF");
 
@@ -94,6 +95,14 @@ public class ImagePopup extends ImageView {
 
     public void setHideCloseIcon(boolean hideCloseIcon) {
         this.hideCloseIcon = hideCloseIcon;
+    }
+
+    public boolean isFullScreen() {
+        return fullScreen;
+    }
+
+    public void setFullScreen(boolean fullScreen) {
+        this.fullScreen = fullScreen;
     }
 
     public void initiatePopup(Drawable drawable) {
@@ -189,7 +198,6 @@ public class ImagePopup extends ImageView {
     public void initiatePopupWithGlide(String imageUrl) {
 
         try {
-//            Log.e("Image", "initiatePopupWithGlide");
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
 
@@ -223,13 +231,16 @@ public class ImagePopup extends ImageView {
         int width = metrics.widthPixels;
         int height = metrics.heightPixels;
 
-        if (windowHeight != 0 || windowWidth != 0) {
-            width = windowWidth;
-            height = windowHeight;
+        if(isFullScreen()) {
             popupWindow = new PopupWindow(layout, (width), (height), true);
-        }else{
-
-            popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
+        }else {
+            if (windowHeight != 0 || windowWidth != 0) {
+                width = windowWidth;
+                height = windowHeight;
+                popupWindow = new PopupWindow(layout, (width), (height), true);
+            } else {
+                popupWindow = new PopupWindow(layout, (int) (width * .8), (int) (height * .6), true);
+            }
         }
 
 
