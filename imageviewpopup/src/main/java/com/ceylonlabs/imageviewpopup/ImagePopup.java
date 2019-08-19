@@ -140,7 +140,8 @@ public class ImagePopup extends ImageView {
 
             imageView = (ImageView) layout.findViewById(R.id.imageView);
 
-            Picasso.with(context).load(imageUrl).into(imageView);
+            Picasso.get().load(imageUrl).into(imageView);
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,7 +161,7 @@ public class ImagePopup extends ImageView {
 
             imageView = (ImageView) layout.findViewById(R.id.imageView);
 
-            Picasso.with(context).load(imageUri).into(imageView);
+            Picasso.get().load(imageUri).into(imageView);
 
 
         } catch (Exception e) {
@@ -181,7 +182,7 @@ public class ImagePopup extends ImageView {
 
              imageView = (ImageView) layout.findViewById(R.id.imageView);
 
-            Picasso.with(context)
+            Picasso.get()
                     .load(imageFile)
                     .into(imageView);
 

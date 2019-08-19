@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android image lib.iml" filepath="$PROJECT_DIR$/Android image lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidImagePopup.iml" filepath="$PROJECT_DIR$/AndroidImagePopup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidImagePopup.iml" filepath="$PROJECT_DIR$/AndroidImagePopup.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imageviewpopup/imageviewpopup.iml" filepath="$PROJECT_DIR$/imageviewpopup/imageviewpopup.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageviewpopup/imageviewpopup.iml" filepath="$PROJECT_DIR$/imageviewpopup/imageviewpopup.iml" />
     </modules>
   </component>

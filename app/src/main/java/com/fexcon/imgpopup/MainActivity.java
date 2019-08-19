@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.ceylonlabs.imageviewpopup.ImagePopup;
 import com.squareup.picasso.Picasso;
 
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -21,17 +22,20 @@ public class MainActivity extends AppCompatActivity {
 
         /** Set Image Height, Width & Background Color as you want **/
 
+        Picasso.setSingletonInstance(new Picasso.Builder(this).build());
+
         Log.e("Width",""+Resources.getSystem().getDisplayMetrics().widthPixels);
         final ImagePopup imagePopup = new ImagePopup(this);
-        imagePopup.setBackgroundColor(Color.BLACK);
+        imagePopup.setBackgroundColor(Color.WHITE);
         imagePopup.setFullScreen(true);
         imagePopup.setHideCloseIcon(true);
         imagePopup.setImageOnClickClose(true);
 
-        final String photoUrl = "http://inthecheesefactory.com/uploads/source/glidepicasso/cover.jpg";
+
+        final String photoUrl = "http://pngriver.com/wp-content/uploads/2017/12/download-Android-Technology-logo-PNG-transparent-images-transparent-backgrounds-PNGRIVER-COM-Android-Mobile-App-Development-Company-In-India-brillmindztech-39975001-800-799.png";
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
-        Picasso.with(this).load(photoUrl).into(imageView);
+        Picasso.get().load(photoUrl).into(imageView);
         // to use it when the same photo are in the image
         // imagePopup.initiatePopup(imageView.getDrawable());
 
