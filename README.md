@@ -20,7 +20,7 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 #### Step 2. Add the dependency
 
     dependencies {
-           compile 'com.github.chathuralakmal:AndroidImagePopup:1.2.1'
+           compile 'com.github.chathuralakmal:AndroidImagePopup:1.2.2'
 	}
 
 
@@ -34,26 +34,30 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 ### Example
 
 	 /** Set popup height, width & background color as you need or just leave default settings **/
+		
+		Picasso.setSingletonInstance(new Picasso.Builder(this).build()); // Only needed if you are using Picasso
 
-	    final ImagePopup imagePopup = new ImagePopup(this);
-	    imagePopup.setWindowHeight(800); // Optional
-	    imagePopup.setWindowWidth(800); // Optional
-	    imagePopup.setBackgroundColor(Color.BLACK);  // Optional
-	    imagePopup.setFullScreen(true); // Optional
-	    imagePopup.setHideCloseIcon(true);  // Optional
-	    imagePopup.setImageOnClickClose(true);  // Optional
+		final ImagePopup imagePopup = new ImagePopup(this);
+		imagePopup.setWindowHeight(800); // Optional
+		imagePopup.setWindowWidth(800); // Optional
+		imagePopup.setBackgroundColor(Color.BLACK);  // Optional
+		imagePopup.setFullScreen(true); // Optional
+		imagePopup.setHideCloseIcon(true);  // Optional
+		imagePopup.setImageOnClickClose(true);  // Optional
 
-	    ImageView imageView = (ImageView) findViewById(R.id.imageView);
-	    imagePopup.initiatePopup(imageView.getDrawable());
+		ImageView imageView = (ImageView) findViewById(R.id.imageView);
+		
+		imagePopup.initiatePopup(imageView.getDrawable()); // Load Image from Drawable
+		
 
-	    imageView.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View view) {
-		    /** Initiate Popup view **/
-		 imagePopup.viewPopup();
+		imageView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+			    /** Initiate Popup view **/
+			 imagePopup.viewPopup();
 
-		}
-	    });
+			}
+		});
 
 	
 ### Support using Picasso 
@@ -81,4 +85,4 @@ Let's make this grow. Contributions are always welcome!
 # License
 The MIT License
 
-2017
+2017 - 2019
