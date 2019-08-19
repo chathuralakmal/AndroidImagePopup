@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 
@@ -143,6 +145,7 @@ public class ImagePopup extends ImageView {
             Picasso.get().load(imageUrl).into(imageView);
 
 
+
         } catch (Exception e) {
             e.printStackTrace();
             Log.e("ImagePopup ", e.getMessage());
@@ -268,6 +271,36 @@ public class ImagePopup extends ImageView {
             });
         }
 
+        dimBehind(popupWindow);
+
+    }
+
+
+    public static void dimBehind(PopupWindow popupWindow) {
+        try {
+            View container;
+            if (popupWindow.getBackground() == null) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    container = (View) popupWindow.getContentView().getParent();
+                } else {
+                    container = popupWindow.getContentView();
+                }
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    container = (View) popupWindow.getContentView().getParent().getParent();
+                } else {
+                    container = (View) popupWindow.getContentView().getParent();
+                }
+            }
+            Context context = popupWindow.getContentView().getContext();
+            WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+            WindowManager.LayoutParams p = (WindowManager.LayoutParams) container.getLayoutParams();
+            p.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+            p.dimAmount = 0.3f;
+            wm.updateViewLayout(container, p);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 }

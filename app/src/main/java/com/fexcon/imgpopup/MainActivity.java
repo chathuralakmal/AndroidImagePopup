@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         Log.e("Width",""+Resources.getSystem().getDisplayMetrics().widthPixels);
         final ImagePopup imagePopup = new ImagePopup(this);
-        imagePopup.setBackgroundColor(Color.WHITE);
-        imagePopup.setFullScreen(true);
+        imagePopup.setBackgroundColor(Color.BLACK);
+        imagePopup.setFullScreen(false);
         imagePopup.setHideCloseIcon(true);
         imagePopup.setImageOnClickClose(true);
 
