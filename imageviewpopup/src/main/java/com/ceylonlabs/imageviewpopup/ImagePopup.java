@@ -119,13 +119,6 @@ public class ImagePopup extends ImageView {
             imageView = (ImageView) layout.findViewById(R.id.imageView);
             imageView.setImageDrawable(drawable);
 
-            /** Background dim part **/
-//            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-//            WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) layout.getLayoutParams();
-//            layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-//            layoutParams.dimAmount = 0.3f;
-//            windowManager.updateViewLayout(layout, layoutParams);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
