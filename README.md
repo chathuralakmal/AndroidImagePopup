@@ -2,8 +2,6 @@
 
 Show image as a popup on a click event or any event. Simply set the image as drawable and thats it!!!. And also you can set width, height & background color as you want.
 
-# ***NOT MAINTAINING NOW***
-
 # Preview
 ![Demo Preview](preview.gif? "Demo Preview")
 
