@@ -32,7 +32,7 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 
     ImagePopup imagePopup = new ImagePopup(this); 
     	
-### Example
+### Java
 
 	 /** Set popup height, width & background color as you need or just leave default settings **/
 		
@@ -60,6 +60,13 @@ Show image as a popup on a click event or any event. Simply set the image as dra
 			}
 		});
 
+### Kotlin
+
+	val imagePopup = ImagePopup(myContext)
+        imagePopup.initiatePopup(imageView.drawable) // Load Image from Drawable
+        imageView.setOnClickListener {
+            imagePopup.viewPopup();
+        }
 	
 ### Support using Picasso 
 	// supprot string url for image 
